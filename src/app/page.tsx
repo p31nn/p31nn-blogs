@@ -1,9 +1,15 @@
-import Image from "next/image";
+import LatestPosts from "@/components/home/latest-posts";
+import { MainNav } from "@/components/main-nav";
 
 export default function Home() {
   return (
     <>
-      <h1>Hello</h1>
+      <MainNav />
+      <main>
+          <div>
+             <LatestPosts />
+          </div>
+      </main>
     </>
   );
 }
