@@ -14,6 +14,9 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
+import { FileX } from "lucide-react"
+import { Icons } from "./icon"
+import { ModeToggle } from "./ui/mode-toggle"
 
 const posts: { title: string; href: string; description: string }[] = [
   {
@@ -53,44 +56,54 @@ const posts: { title: string; href: string; description: string }[] = [
   },
 ]
 
-export function MainNav() {
+export function MainNav({ className }: { className?: string }) {
   return (
-    <div>
-        <Link href={"/"}>
-            <div>  
-                {/* Icon */}
-                <p>P31NN</p>
-            </div>
-        </Link>
-        <NavigationMenu>
+    <div
+      className={cn(
+        "flex flex-col items-start justify-start md:flex-row md:items-center md:justify-between pt-10 z-50",
+        className
+      )}
+    >
+      <Link href={"/"}>
+        <div className="flex items-center justify-start w-32">
+          <p className="text-xl font-bold">P31NN</p>
+        </div>
+      </Link>
+      <NavigationMenu>
         <NavigationMenuList>
-            <NavigationMenuItem>
+          <NavigationMenuItem>
             <NavigationMenuTrigger>Posts</NavigationMenuTrigger>
             <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                {posts.map((posts) => (
-                    <ListItem
-                    key={posts.title}
-                    title={posts.title}
-                    href={posts.href}
-                    >
-                    {posts.description}
-                    </ListItem>
+              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                {posts.map((post) => (
+                  <ListItem
+                    key={post.title}
+                    title={post.title}
+                    href={post.href}
+                  >
+                    {post.description}
+                  </ListItem>
                 ))}
-                </ul>
+              </ul>
             </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
             <Link href="/about" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 About
-                </NavigationMenuLink>
+              </NavigationMenuLink>
             </Link>
-            </NavigationMenuItem>
+          </NavigationMenuItem>
         </NavigationMenuList>
-        </NavigationMenu>
+      </NavigationMenu>
+      <div className="flex items-center justify-between w-20">
+        <ModeToggle />
+        <Link href="/rss">
+          <Icons.rss className="h-6 w-6" />
+        </Link>
+      </div>
     </div>
-  )
+  );
 }
 
 const ListItem = React.forwardRef<
