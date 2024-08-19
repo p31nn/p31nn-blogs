@@ -1,5 +1,5 @@
 import { popularPosts } from "@/lib/placeholder-data";
-import { Icons } from "../icon";
+import { Icons } from "../icons";
 
 export default function PopularPosts() {
     return(

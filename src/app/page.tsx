@@ -9,7 +9,7 @@ export default function Home() {
     <Container>
       <MainNav />
       <div className="mt-32">
-          <h1 className="font-extrabold text-7xl">Hi, I&apos;m Peam</h1>
+          <h1 className="font-extrabold text-7xl">Hi, I&apos;m Peam สวัสดีคับ</h1>
       </div>
       <main className="flex flex-col items-start justify-evenly mt-16 md:flex-row">
         <div>
