@@ -1,7 +1,7 @@
 import Container from "@/components/Container";
 import LatestPosts from "@/components/home/latest-posts";
 import { MainNav } from "@/components/main-nav";
-import TopCatagories from "@/components/home/top-categories";
+import TopCategories from "@/components/home/top-categories";
 import PopularPosts from "@/components/home/popular-posts";
 
 export default function Home() {
@@ -18,7 +18,7 @@ export default function Home() {
         <div className="h-screen">
           <div>
             <h1 className="font-bold mb-4">TOP CATEGORIES</h1>
-            <TopCatagories />
+            <TopCategories />
           </div>
           <div className="mt-10 sticky top-0">
             <h1 className="font-bold mb-4">POPULAR POSTS</h1>
