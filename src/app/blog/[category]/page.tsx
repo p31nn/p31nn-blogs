@@ -18,7 +18,7 @@ export function generateMetadata({ params }: { params: { category: string } }) {
 
   return {
     title: category.toLocaleUpperCase(),
-    description: `All articles reagarding ${category}`,
+    description: `All articles regarding ${category}`,
   };
 }
 
@@ -34,7 +34,7 @@ export default function Page({ params }: { params: { category: string } }) {
     <>
       <Header>
         <Container>
-          <h1 className="title font-semibold text-2xl tracking-wider mt-4 uppercase">
+          <h1 className="title font-semibold text-2xl mt-4 uppercase">
             {posts[0]?.metadata.category}
           </h1>
         </Container>

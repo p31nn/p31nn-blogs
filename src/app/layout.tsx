@@ -30,7 +30,8 @@ export default function RootLayout({
 }>) {
   return (
     <html>
-      <body className={`${inter.className} ${sarabun.className}`}>
+      {/* <body className={`${inter.className} ${sarabun.className}`}> */}
+      <body className={inter.className}>
         <ThemeProvider 
           attribute="class" 
           defaultTheme="system" 

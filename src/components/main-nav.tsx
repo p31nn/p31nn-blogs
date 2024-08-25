@@ -28,7 +28,7 @@ export function MainNav({ className }: { className?: string }) {
     >
       <Link href={"/"}>
         <div className="flex items-center justify-start w-32">
-          <p className="text-xl font-bold">P31NN</p>
+          <p className="text-xl font-bold hover:scale-110 transition-all">P31NN</p>
         </div>
       </Link>
       <NavigationMenu>
